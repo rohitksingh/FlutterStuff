@@ -43,8 +43,51 @@ class MovieListState extends State<MovieList>{
           )
         ],
       ),
+      body: new Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new MovieTitle(mainColor),
+          ],
+        ),
+
+
+
+      ),
 
     );
+  }
+
+
+}
+
+
+class MovieTitle extends StatelessWidget{
+
+  final Color mainColor;
+  MovieTitle(this.mainColor);
+  
+  @override
+  Widget build(BuildContext context) {
+    
+    return new Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      child: new Text(
+        'Top Rated',
+        textAlign: TextAlign.left,
+        style: TextStyle(
+          color: mainColor,
+          fontSize: 40.0,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Avro'
+        ),
+      ),
+
+    )
+    
+    
+    
   }
 
 
