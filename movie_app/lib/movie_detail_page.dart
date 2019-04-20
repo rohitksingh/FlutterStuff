@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
 
 
 class MovieList extends StatefulWidget{
@@ -28,6 +29,9 @@ class MovieListState extends State<MovieList>{
 
     setState(() {
       movies = data['results'];
+
+      debugPrint('Response $movies');
+
     });
 
   }
@@ -35,6 +39,8 @@ class MovieListState extends State<MovieList>{
 
   @override
   Widget build(BuildContext context) {
+
+    getData();
 
     return new Scaffold(
 
@@ -64,6 +70,7 @@ class MovieListState extends State<MovieList>{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new MovieTitle(mainColor),
+            
           ],
         ),
 
@@ -77,7 +84,7 @@ class MovieListState extends State<MovieList>{
 
   Future<Map> getJson() async {
 
-    var url = 'http://api.themoviedb.org/3/discover/movie?api_key={1e180262302e279996c7e928084a6c28}';
+    var url = 'http://api.themoviedb.org/3/discover/movie?api_key=1e180262302e279996c7e928084a6c28';
     http.Response response = await http.get(url);
     return json.decode(response.body);
 
@@ -115,4 +122,64 @@ class MovieTitle extends StatelessWidget{
   }
 
 
+}
+
+
+class MovieCell extends StatelessWidget{
+  
+  final movies;
+  final i;
+  Color mainColor = const Color(0xff3C3261);
+  var image_url = 'https://image.tmdb.org/t/p/w500/';
+
+  MovieCell(this.movies, this.i);
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    return new Column(
+
+      children: <Widget>[
+        new Row(
+          children: <Widget>[
+            new Padding(
+              padding: const EdgeInsets.all(0.0),
+              child: new Container(
+                margin: const EdgeInsets.all(0.0),
+                child: new Container(
+                  margin: const EdgeInsets.all(0.0),
+                  child: new Container(
+                    width: 70.0,
+                    height: 70.0,
+                  ),
+                ),
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.circular(10.0),
+                  color: Colors.grey,
+                  image: new DecorationImage(image: new NetworkImage(image_url+movies[i]),fit: BoxFit.cover),
+                  boxShadow: [
+                    new BoxShadow(
+                      color: mainColor,
+                      blurRadius: 5.0,
+                      offset: new Offset(2.0,5.0)
+                    )
+                  ],
+                ),
+              ),
+
+            )
+          ],
+        )
+
+      ],
+
+    );
+  }
+
+
+
+  
+  
+  
 }
