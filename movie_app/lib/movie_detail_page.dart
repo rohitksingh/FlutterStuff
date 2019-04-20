@@ -70,7 +70,18 @@ class MovieListState extends State<MovieList>{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new MovieTitle(mainColor),
-            
+            new Expanded(
+                child: new ListView.builder(
+                  itemBuilder: (context, i){
+                    return new FlatButton(
+                      child: new MovieCell(movies, i),
+                      padding: const EdgeInsets.all(0.0),
+                      color: Colors.white,
+                    
+                    );
+                  },
+                  itemCount: movies == null ? 0 : movies.length,
+                ))
           ],
         ),
 
