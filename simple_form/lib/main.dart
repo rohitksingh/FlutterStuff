@@ -18,11 +18,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green[400],
       ),
       body: Center(
-        child: Image(
-          image: AssetImage(
-            'assets/old_people.jpg'
-          ),
-        ),
+        child: Image.asset('assets/old_people.jpg'),
 
       ),
       floatingActionButton: FloatingActionButton(
