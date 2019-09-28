@@ -63,7 +63,7 @@ flutter:
           style: italic
 
   assets:
-    - assets/old_people.jpg
+    - assets/
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
