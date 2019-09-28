@@ -16,7 +16,8 @@ void main() => runApp(MaterialApp(
         style: TextStyle(
           color: Colors.green,
           fontSize: 30.0,
-          fontWeight: FontWeight.bold
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Indie'
         ),
       ),
 
