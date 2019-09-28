@@ -18,15 +18,19 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green[400],
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: (){},
-          color: Colors.green,
-          textColor: Colors.white,
-          child: Text(
-            'Click Me',
-          ),
-        ),
-
+        child: RaisedButton.icon(
+            color: Colors.green,
+            onPressed: (){print('Mail me');},
+            icon: Icon(
+              Icons.mail,
+              color: Colors.white,
+            ),
+            label: Text(
+              'Mail me',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            )),
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('Click'),
