@@ -19,7 +19,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Icon(
-          Icons.add_location
+          Icons.add_location,
+          color: Colors.green,
+          size: 40,
         ),
 
       ),
