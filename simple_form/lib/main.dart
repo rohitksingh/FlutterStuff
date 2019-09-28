@@ -19,7 +19,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Image(
-          image: NetworkImage('https://images.unsplash.com/photo-1569524872948-0ba4d096f997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'),
+          image: AssetImage(
+            'assets/old_people.jpg'
+          ),
         ),
 
       ),
