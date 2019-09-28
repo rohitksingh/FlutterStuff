@@ -18,10 +18,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green[400],
       ),
       body: Center(
-        child: Icon(
-          Icons.add_location,
+        child: RaisedButton(
+          onPressed: (){},
           color: Colors.green,
-          size: 40,
+          textColor: Colors.white,
+          child: Text(
+            'Click Me',
+          ),
         ),
 
       ),
