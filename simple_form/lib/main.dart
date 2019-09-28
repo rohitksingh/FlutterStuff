@@ -18,14 +18,8 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green[400],
       ),
       body: Center(
-        child: Text(
-          'Hello Flutter',
-          style: TextStyle(
-              color: Colors.green,
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Indie'
-          ),
+        child: Image(
+          image: NetworkImage('https://images.unsplash.com/photo-1569524872948-0ba4d096f997?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'),
         ),
 
       ),
