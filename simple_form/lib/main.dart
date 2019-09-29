@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
 
         children: <Widget>[
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
               color: Colors.cyan,
               padding: EdgeInsets.all(30),
