@@ -17,20 +17,12 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green[400],
       ),
-      body: Center(
-        child: RaisedButton.icon(
-            color: Colors.green,
-            onPressed: (){print('Mail me');},
-            icon: Icon(
-              Icons.mail,
-              color: Colors.white,
-            ),
-            label: Text(
-              'Mail me',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            )),
+      body: Container(
+        color: Colors.amber,
+        padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
+        margin: EdgeInsets.all(20),
+        child: Text('Hello Container', style: TextStyle(color: Colors.white),)
+        ,
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('Click'),
