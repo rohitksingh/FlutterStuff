@@ -17,9 +17,30 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green[400],
       ),
-      body: Padding(
-        child: Text('Hello Padding', style: TextStyle(color: Colors.green),),
-        padding: EdgeInsets.all(40),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Text('Hello Text'),
+          RaisedButton(
+            onPressed: (){},
+            color: Colors.green,
+            child: Text('Mail me', style: TextStyle(color: Colors.white),),
+            elevation: 40,
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.all(20),
+            color: Colors.green,
+            child: Text('Text with padding', style: TextStyle(color: Colors.white),),
+          ),
+//          Padding(
+//            padding: EdgeInsets.all(20),
+//            child: FlatButton(
+//              textColor: Colors.white,
+//              child: Text('Button with padding'),
+//            ),
+//          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('Click'),
