@@ -18,28 +18,32 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.green[400],
       ),
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
         children: <Widget>[
-          Text('Hello Text'),
-          RaisedButton(
-            onPressed: (){},
-            color: Colors.green,
-            child: Text('Mail me', style: TextStyle(color: Colors.white),),
-            elevation: 40,
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30),
+              child: Text('1', style: TextStyle(fontFamily: 'Indie', fontSize: 20, color: Colors.white),),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(20),
-            color: Colors.green,
-            child: Text('Text with padding', style: TextStyle(color: Colors.white),),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.amber,
+              padding: EdgeInsets.all(30),
+              child:  Text('2', style: TextStyle(fontFamily: 'Indie', fontSize: 20, color: Colors.white),),
+            ),
           ),
-//          Padding(
-//            padding: EdgeInsets.all(20),
-//            child: FlatButton(
-//              textColor: Colors.white,
-//              child: Text('Button with padding'),
-//            ),
-//          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.pink,
+              padding: EdgeInsets.all(30),
+              child:  Text('3', style: TextStyle(fontFamily: 'Indie', fontSize: 20, color: Colors.white),),
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
