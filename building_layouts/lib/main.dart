@@ -8,6 +8,12 @@ void main() => runApp(MaterialApp(
     appBar: AppBar(title: Text("Building Layouut"),),
     body: Column(
       children: [
+        Image.asset(
+          'assets/lake.jpg',
+          width: 600,
+          height: 200,
+          fit: BoxFit.cover,
+        ),
         titleSection,
         buttonSection,
         descriptionSection,
@@ -76,7 +82,10 @@ Column createButtonColumn(IconData iconData, String iconName){
 
 Widget descriptionSection = Container(
   padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
-  child: Text(descriptionText),
+  child: Text(
+      descriptionText,
+      softWrap: true,
+  ),
 );
 
 
