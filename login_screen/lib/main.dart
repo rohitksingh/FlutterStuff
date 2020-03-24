@@ -10,16 +10,23 @@ void main() => runApp(MaterialApp(
     body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        TextField(
-          decoration: InputDecoration(
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: "Username"
+              hintText: "Username",
+
+            ),
           ),
         ),
-        TextField(
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: "Password"
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Password"
+            ),
           ),
         ),
         RaisedButton(
@@ -28,6 +35,7 @@ void main() => runApp(MaterialApp(
           child: Text("Login Button"),
           textColor: Colors.white,
         ),
+        Text("Don't have account? Sign up now"),
 
       ],
     ),
