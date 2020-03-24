@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+String descriptionText ="Build the row containing these columns by calling the function and passing the color, Icon, and text specific to that column. Align the columns along the main axis using MainAxisAlignment.spaceEvenly to arrange the free space evenly before, between, and after each column. Add the following code just below the titleSection declaration inside the build() method:";
+
 void main() => runApp(MaterialApp(
   title: "Building layout Demo",
   home: Scaffold(
@@ -8,6 +10,7 @@ void main() => runApp(MaterialApp(
       children: [
         titleSection,
         buttonSection,
+        descriptionSection,
       ],
     ),
   ),
@@ -49,15 +52,15 @@ Widget buttonSection = Container(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      createButtonClumn(Icons.mail, "Mail"),
-      createButtonClumn(Icons.print, "Print"),
-      createButtonClumn(Icons.add, "Add")
+      createButtonColumn(Icons.mail, "Mail"),
+      createButtonColumn(Icons.print, "Print"),
+      createButtonColumn(Icons.add, "Add")
     ],
   ),
 );
 
 
-Column createButtonClumn(IconData iconData, String iconName){
+Column createButtonColumn(IconData iconData, String iconName){
 
   return Column(
     children: [
@@ -70,6 +73,11 @@ Column createButtonClumn(IconData iconData, String iconName){
   );
 
 }
+
+Widget descriptionSection = Container(
+  padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
+  child: Text(descriptionText),
+);
 
 
 
