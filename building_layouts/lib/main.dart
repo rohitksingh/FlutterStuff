@@ -7,6 +7,7 @@ void main() => runApp(MaterialApp(
     body: Column(
       children: [
         titleSection,
+        buttonSection,
       ],
     ),
   ),
@@ -42,5 +43,33 @@ Widget titleSection = Container(
     ],
   ),
 );
+
+Widget buttonSection = Container(
+  padding: EdgeInsets.all(8),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      RaisedButton(
+        onPressed: (){},
+        color: Colors.red,
+        child: Text('Button'),
+      ),
+      RaisedButton(
+        onPressed: (){},
+        color: Colors.red,
+        child: Text('Button'),
+      ),
+      RaisedButton(
+        onPressed: (){},
+        color: Colors.red,
+        child: Text('Button'),
+      ),
+    ],
+  ),
+);
+
+
+
+
 
 
