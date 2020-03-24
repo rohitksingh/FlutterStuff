@@ -1,0 +1,20 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class SignupScreen extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Signup")
+      ),
+      body: Center(
+        child: Text("Hi How you doing?"
+        ),
+      ),
+    );
+  }
+
+}
