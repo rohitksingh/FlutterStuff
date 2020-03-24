@@ -49,27 +49,27 @@ Widget buttonSection = Container(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      RaisedButton(
-        onPressed: (){},
-        color: Colors.red,
-        child: Text('Button'),
-      ),
-      RaisedButton(
-        onPressed: (){},
-        color: Colors.red,
-        child: Text('Button'),
-      ),
-      RaisedButton(
-        onPressed: (){},
-        color: Colors.red,
-        child: Text('Button'),
-      ),
+      createButtonClumn(Icons.mail, "Mail"),
+      createButtonClumn(Icons.print, "Print"),
+      createButtonClumn(Icons.add, "Add")
     ],
   ),
 );
 
 
+Column createButtonClumn(IconData iconData, String iconName){
 
+  return Column(
+    children: [
+      Icon(
+        iconData,
+        color: Colors.red,
+      ),
+      Text(iconName)
+    ],
+  );
+
+}
 
 
 
