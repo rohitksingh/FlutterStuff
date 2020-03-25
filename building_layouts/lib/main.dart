@@ -8,12 +8,7 @@ void main() => runApp(MaterialApp(
     appBar: AppBar(title: Text("Building Layouut"),),
     body: Column(
       children: [
-        Image.asset(
-          'assets/lake.jpg',
-          width: 600,
-          height: 200,
-          fit: BoxFit.cover,
-        ),
+        imageSection,
         titleSection,
         buttonSection,
         descriptionSection,
@@ -88,5 +83,12 @@ Widget descriptionSection = Container(
   ),
 );
 
-
+Widget imageSection = Container(
+  child: Image.asset(
+    'assets/lake.jpg',
+    width: 500,
+    height: 200,
+    fit: BoxFit.cover,
+  ),
+);
 
