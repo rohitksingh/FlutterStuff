@@ -100,20 +100,22 @@ class FavoriteWidget extends StatefulWidget{
 
 class FavoriteWidgetState extends State<FavoriteWidget>{
 
-  bool isFavorite = false;
+  bool isFavorite = true;
   int count = 41;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Container(
       child: Row(
-        children: <Widget>[
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
           IconButton(
             onPressed: setFavorite,
             icon: IconButton(
-              icon: (isFavorite ? Icon(Icons.star) : Icon(Icons.star_border)),
               color: Colors.red,
+              icon: (isFavorite ? Icon(Icons.star) : Icon(Icons.star_border)),
             ),
           ),
           Text('$count')
@@ -124,15 +126,15 @@ class FavoriteWidgetState extends State<FavoriteWidget>{
   }
 
   void setFavorite(){
-    
-    print("click");
-    if(isFavorite){
-      isFavorite = false;
-      count = 40;
-    }else{
-      isFavorite = true;
-      count = 41;
-    }
+    setState(() {
+      if(isFavorite){
+        isFavorite = false;
+        count = 40;
+      }else{
+        isFavorite = true;
+        count = 41;
+      }
+    });
   }
 
 }
