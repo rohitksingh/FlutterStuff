@@ -36,14 +36,7 @@ Widget titleSection = Container(
           ],
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Icon(
-          Icons.mail,
-          color: Colors.red,
-        ),
-      ),
-      Text('41')
+      FavoriteWidget()
     ],
   ),
 );
@@ -91,4 +84,56 @@ Widget imageSection = Container(
     fit: BoxFit.cover,
   ),
 );
+
+
+
+class FavoriteWidget extends StatefulWidget{
+
+  @override
+  State<StatefulWidget> createState() {
+
+    return FavoriteWidgetState();
+  }
+
+}
+
+
+class FavoriteWidgetState extends State<FavoriteWidget>{
+
+  bool isFavorite = false;
+  int count = 41;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Row(
+        children: <Widget>[
+          IconButton(
+            onPressed: setFavorite,
+            icon: IconButton(
+              icon: (isFavorite ? Icon(Icons.star) : Icon(Icons.star_border)),
+              color: Colors.red,
+            ),
+          ),
+          Text('$count')
+        ],
+      ),
+    );
+
+  }
+
+  void setFavorite(){
+    
+    print("click");
+    if(isFavorite){
+      isFavorite = false;
+      count = 40;
+    }else{
+      isFavorite = true;
+      count = 41;
+    }
+  }
+
+}
 
