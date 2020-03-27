@@ -150,13 +150,13 @@ Widget castSection = new Card(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
-            child: peopleSection,
+            child: new PeopleSection('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
           ),
           Expanded(
-            child: peopleSection,
+            child: new PeopleSection('assets/movie_main.jpeg', 'Actor 1', 'Actor 1'),
           ),
           Expanded(
-            child: peopleSection,
+            child: new PeopleSection('assets/movie_main.jpeg', 'Actor 2', 'Actor 2'),
           )
         ],
       )
@@ -164,26 +164,41 @@ Widget castSection = new Card(
   ),
 );
 
-Widget peopleSection = new Container(
-    padding: EdgeInsets.all(8),
-    child:Column(
-      children: <Widget>[
-        Image.asset(
-          'assets/movie_main.jpeg',
-          height: 140,
-          fit: BoxFit.fitHeight,
-        ),
-        Text(
-            'Christian Bale'
-        ),
-        Text(
-            'Bruce Wayne'
+
+class PeopleSection extends StatelessWidget{
+
+  String imageUrl, name, characterName;
+
+  PeopleSection(String imageUrl, String name, String characterName){
+    this.imageUrl = imageUrl;
+    this.name = name;
+    this.characterName = characterName;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return new Container(
+        padding: EdgeInsets.all(8),
+        child:Column(
+          children: <Widget>[
+            Image.asset(
+              '$imageUrl',
+              height: 140,
+              fit: BoxFit.fitHeight,
+            ),
+            Text(
+                '$name'
+            ),
+            Text(
+                '$characterName'
+            )
+          ],
         )
-      ],
-    )
-);
+    );
+  }
 
-
+}
 
 
 
