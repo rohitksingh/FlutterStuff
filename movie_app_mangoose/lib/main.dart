@@ -134,9 +134,16 @@ Widget castSection = new Card(
   child: Column(
     children: <Widget>[
       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text('Cast'),
-          Text('View 111+'),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
+            child: Text('Cast', style: TextStyle(fontSize: 20),),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 8, 8, 0),
+            child: Text('View 111+', style: TextStyle(color: Colors.lightBlue),),
+          ),
         ],
       ),
       Row(
