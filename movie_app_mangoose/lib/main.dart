@@ -241,9 +241,4 @@ class People extends StatelessWidget{
         )
     );
   }
-
 }
-
-
-
-
