@@ -13,7 +13,7 @@ void main() => runApp(MaterialApp(
             informationSection,
             imageSection,
             castSection,
-            crewSction
+            castSection
           ],
         ),
     ),
@@ -130,9 +130,51 @@ Widget imageSection = new Column(
   ],
 );
 
-Widget castSection = new Container();
+Widget castSection = new Card(
+  child: Column(
+    children: <Widget>[
+      Row(
+        children: <Widget>[
+          Text('Cast'),
+          Text('View 111+'),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Expanded(
+            child: peopleSection,
+          ),
+          Expanded(
+            child: peopleSection,
+          ),
+          Expanded(
+            child: peopleSection,
+          )
+        ],
+      )
+    ],
+  ),
+);
 
-Widget crewSction = new Container();
+Widget peopleSection = new Container(
+    padding: EdgeInsets.all(8),
+    child:Column(
+      children: <Widget>[
+        Image.asset(
+          'assets/movie_main.jpeg',
+          height: 140,
+          fit: BoxFit.fitHeight,
+        ),
+        Text(
+            'Christian Bale'
+        ),
+        Text(
+            'Bruce Wayne'
+        )
+      ],
+    )
+);
 
 
 
