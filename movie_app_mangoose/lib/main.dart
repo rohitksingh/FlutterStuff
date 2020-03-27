@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 void main() => runApp(MaterialApp(
   home: Scaffold(
     appBar: AppBar(
-      title: Text("Movie Name"),
+      title: Text("Batman Begins"),
     ),
     body: ListView(
           children: <Widget>[
@@ -12,8 +12,8 @@ void main() => runApp(MaterialApp(
             biographySectuon,
             informationSection,
             imageSection,
-            castSection,
-            castSection
+            new PeopleSection('Cast', 40),
+            new PeopleSection('Crew', 111)
           ],
         ),
     ),
@@ -31,7 +31,7 @@ Widget headerSection = Container(
 
 Widget biographySectuon = Container(
   padding: EdgeInsets.all(16),
-  child: Text('Lorem ipsum Lorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsuLorem ipsu',
+  child: Text('A young Bruce Wayne (Christian Bale) travels to the Far East, where he is trained in the martial arts by Henri Ducard (Liam Neeson), a member of the mysterious League of Shadows',
     style: TextStyle(
       color: Colors.white,
     ),
@@ -62,7 +62,7 @@ Widget informationSection = Container(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Expanded(
-            child: Text('10 July 1994'),
+            child: Text('June 15, 2005'),
           ),
           Expanded(
             child: Text('140 mins'),
@@ -117,59 +117,120 @@ Widget imageSection = new Column(
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        Image.asset(
-          'assets/movie_main.jpeg',
-          height: 100,
+        Expanded(
+          child: Image.asset(
+            'assets/movie_main.jpeg',
+            height: 100,
+            fit: BoxFit.fitWidth,
+          ),
         ),
-        Image.asset(
-          'assets/movie_main.jpeg',
-          height: 100,
+        Divider(
+          color: Colors.white,
+          thickness: 1,
+        ),
+        Expanded(
+            child:Image.asset(
+              'assets/movie_main.jpeg',
+              height: 100,
+              fit: BoxFit.fitWidth,
+            )
         )
       ],
     )
   ],
 );
 
-Widget castSection = new Card(
-  child: Column(
-    children: <Widget>[
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
-            child: Text('Cast', style: TextStyle(fontSize: 20),),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 8, 8, 0),
-            child: Text('View 111+', style: TextStyle(color: Colors.lightBlue),),
-          ),
-        ],
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            child: new PeopleSection('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
-          ),
-          Expanded(
-            child: new PeopleSection('assets/movie_main.jpeg', 'Actor 1', 'Actor 1'),
-          ),
-          Expanded(
-            child: new PeopleSection('assets/movie_main.jpeg', 'Actor 2', 'Actor 2'),
-          )
-        ],
-      )
-    ],
-  ),
-);
+//Widget castSection = new Card(
+//  child: Column(
+//    children: <Widget>[
+//      Row(
+//        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//        children: <Widget>[
+//          Padding(
+//            padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
+//            child: Text('Cast', style: TextStyle(fontSize: 20),),
+//          ),
+//          Padding(
+//            padding: const EdgeInsets.fromLTRB(0, 8, 8, 0),
+//            child: Text('View 111+', style: TextStyle(color: Colors.lightBlue),),
+//          ),
+//        ],
+//      ),
+//      Row(
+//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//        children: <Widget>[
+//          Expanded(
+//            child: new People('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
+//          ),
+//          Expanded(
+//            child: new People('assets/movie_main.jpeg', 'Actor 1', 'Actor 1'),
+//          ),
+//          Expanded(
+//            child: new People('assets/movie_main.jpeg', 'Actor 2', 'Actor 2'),
+//          )
+//        ],
+//      )
+//    ],
+//  ),
+//);
+
 
 
 class PeopleSection extends StatelessWidget{
 
+  String sectionName;
+  int numsToView = 1;
+
+  PeopleSection(String sectionName, int numsToView){
+    this.sectionName = sectionName;
+    this.numsToView = numsToView;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
+                child: Text('$sectionName', style: TextStyle(fontSize: 20),),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 8, 8, 0),
+                child: Text('$numsToView+', style: TextStyle(color: Colors.lightBlue),),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Expanded(
+                child: new People('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
+              ),
+              Expanded(
+                child: new People('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
+              ),
+              Expanded(
+                child: new People('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+}
+
+class People extends StatelessWidget{
+
   String imageUrl, name, characterName;
 
-  PeopleSection(String imageUrl, String name, String characterName){
+  People(String imageUrl, String name, String characterName){
     this.imageUrl = imageUrl;
     this.name = name;
     this.characterName = characterName;
@@ -187,8 +248,12 @@ class PeopleSection extends StatelessWidget{
               height: 140,
               fit: BoxFit.fitHeight,
             ),
-            Text(
-                '$name'
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                  '$name',
+                style: TextStyle(fontWeight: FontWeight.bold,),
+              ),
             ),
             Text(
                 '$characterName'
