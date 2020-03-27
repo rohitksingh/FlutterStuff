@@ -106,74 +106,53 @@ Widget informationSection = Container(
   ),
 );
 
-Widget imageSection = new Column(
+Widget imageSection = Stack(
   children: <Widget>[
-    Image.asset(
-      'assets/movie_main.jpeg',
-      width: 500,
-      height: 200,
-      fit: BoxFit.cover,
-    ),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+     Column(
       children: <Widget>[
-        Expanded(
-          child: Image.asset(
-            'assets/movie_main.jpeg',
-            height: 100,
-            fit: BoxFit.fitWidth,
-          ),
+        Image.asset(
+          'assets/movie_main.jpeg',
+          width: 500,
+          height: 200,
+          fit: BoxFit.cover,
         ),
-        Divider(
-          color: Colors.white,
-          thickness: 1,
-        ),
-        Expanded(
-            child:Image.asset(
-              'assets/movie_main.jpeg',
-              height: 100,
-              fit: BoxFit.fitWidth,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Expanded(
+              child: Image.asset(
+                'assets/movie_main.jpeg',
+                height: 100,
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            Divider(
+              color: Colors.white,
+              thickness: 1,
+            ),
+            Expanded(
+                child:Image.asset(
+                  'assets/movie_main.jpeg',
+                  height: 100,
+                  fit: BoxFit.fitWidth,
+                )
             )
+          ],
         )
       ],
-    )
+    ),
+    Positioned(
+        left: 10,
+        top: 10,
+        child: Text('Images', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),)
+    ),
+    Positioned(
+        right: 10,
+        bottom: 10,
+        child: Text('View More', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),)
+    ),
   ],
 );
-
-//Widget castSection = new Card(
-//  child: Column(
-//    children: <Widget>[
-//      Row(
-//        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//        children: <Widget>[
-//          Padding(
-//            padding: const EdgeInsets.fromLTRB(8, 8, 0, 0),
-//            child: Text('Cast', style: TextStyle(fontSize: 20),),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.fromLTRB(0, 8, 8, 0),
-//            child: Text('View 111+', style: TextStyle(color: Colors.lightBlue),),
-//          ),
-//        ],
-//      ),
-//      Row(
-//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//        children: <Widget>[
-//          Expanded(
-//            child: new People('assets/movie_main.jpeg', 'Christian Bale', 'Bruce Wayne'),
-//          ),
-//          Expanded(
-//            child: new People('assets/movie_main.jpeg', 'Actor 1', 'Actor 1'),
-//          ),
-//          Expanded(
-//            child: new People('assets/movie_main.jpeg', 'Actor 2', 'Actor 2'),
-//          )
-//        ],
-//      )
-//    ],
-//  ),
-//);
-
 
 
 class PeopleSection extends StatelessWidget{
